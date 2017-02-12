@@ -1,0 +1,142 @@
+
+<div>
+	<nav class='navbar navbar-default portlet box'
+		style="margin-bottom: 0px; background-color: white">
+		<div class='container-fluid portlet-title'>
+			<img src="../../assets/images/logo-cisco.png"
+				style="float: left; padding-top: 10px; padding-right: 20px;">
+
+
+			<ul class="nav navbar-nav pull-right"
+				style="padding: 0px; margin: 0px;">
+				<li class="separator hide"></li>
+				<!-- BEGIN NOTIFICATION DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+
+				<!-- BEGIN USER LOGIN DROPDOWN -->
+				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+				<li class="dropdown dropdown-user dropdown-dark"
+					style="padding: 0px; margin: 0px;"><a href="javascript:;"
+					style="padding-left: 0px; padding-right: 0px"
+					class="dropdown-toggle" title="Go To" data-placement="bottom"
+					data-toggle="dropdown;tooltip" data-hover="dropdown"
+					data-close-others="true"> <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
+						<span class="username username-hide-on-mobile"> Ankesh
+							Sharma</span> <img alt="" class="img-circle"
+						style="height: 70px; margin-top: -10px;"
+						src="" />
+
+				</a></li>
+
+			</ul>
+		</div>
+
+
+
+
+	</nav>
+
+</div>
+<br>
+<br>
+
+
+
+<div class="row">
+	<div class="tab-pane active col-md-offset-2 col-md-8" id="tab_0">
+
+
+
+		<div class="portlet box green">
+			<div class="portlet-title">
+				<div class="caption">
+					<i class="fa fa-gift"></i>Entity Information
+				</div>
+				<div class="tools">
+					<a href="javascript:;" class="collapse" data-original-title=""
+						title=""> </a> <a href="#portlet-config" data-toggle="modal"
+						class="config" data-original-title="" title=""> </a> <a
+						href="javascript:;" class="reload" data-original-title="" title="">
+					</a> <a href="javascript:;" class="remove" data-original-title=""
+						title=""> </a>
+				</div>
+			</div>
+			<div class="portlet-body form">
+				<!-- BEGIN FORM-->
+				<form action="#" class="form-horizontal">
+					<div class="form-body">
+						<div class="form-group">
+							<div class="form-inline">
+								<label class="col-md-2 control-label">Entity</label>
+								<div class="col-md-4">
+									<div class="input-group">
+										<span class="input-group-addon input-circle-left"> <i
+											class="fa fa-sitemap"></i>
+										</span> <input type="text" class="form-control input-circle-right" [(ngModel)]='entityName' placeholder="Enter" [ngModelOptions]="{standalone: true}">
+									</div>
+								</div>
+								<label class="col-md-2 control-label">Entity Type</label>
+								<div class="col-md-4">
+									<select class="bs-select form-control input-circle col-md-4" [(ngModel)]='entityType' [ngModelOptions]="{standalone: true}" tabindex="-98">
+										<option>Software</option>
+										<option>Product</option>
+										<option>URL</option>
+									</select>
+									
+									<a (click)='addRow()'>
+									    <i class="fa fa-plus fa-lg"></i>
+									</a>
+								</div>
+									
+							</div>
+						</div>
+
+						<div class="form-group" *ngFor="let dependent of dependentList">
+							<div class="form-inline">
+								<label class="col-md-2 control-label">Dependent</label>
+								<div class="col-md-4">
+									<div class="input-group">
+										<span class="input-group-addon input-circle-left"> <i
+											class="fa fa-share-alt"></i>
+										</span> <input type="text" [(ngModel)]="dependent.dependentName"  [ngModelOptions]="{standalone: true}" class="form-control input-circle-right"
+											placeholder="Enter">
+									</div>
+								</div>
+								<label class="col-md-2 control-label" >Dependent Type</label>
+								<div class="col-md-4" >
+									<select class="bs-select form-control input-circle" [(ngModel)]="dependent.dependentType"  [ngModelOptions]="{standalone: true}"
+										tabindex="-98">
+										<option>CG1PRD</option>
+										<option>DMPORD</option>
+										<option>APP</option>
+									</select>
+									
+									
+									
+								</div>
+								
+
+							</div>
+
+						</div>
+						
+						
+								
+
+					</div>
+					<div class="form-actions">
+						<div class="row">
+							<div class="col-md-offset-5 col-md-4">
+								<button  (click)='createNode()' class="btn green">Submit</button>
+
+							</div>
+						</div>
+					</div>
+
+				</form>
+				<!-- END FORM-->
+			</div>
+		</div>
+
+	</div>
+</div>
